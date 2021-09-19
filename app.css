@@ -133,7 +133,7 @@ padding: 20px;
 }
 #input{
     margin: auto;
-max-width: 400px;
+max-width: 350px;
 margin-bottom: 10px;
 }
 
@@ -172,7 +172,7 @@ margin-bottom: 10px;
 #total{
     margin:auto;
     margin-bottom: 30px;
-    max-width: 400px;
+    max-width: 350px;
 }
 
 #reset{
@@ -186,12 +186,15 @@ margin-bottom: 10px;
 
         background-position: center;
     }
+    #amount,#people{
+background-size: 10px;
+    }
     .wrapper{
         padding:30px;
         width: 80%;
         max-width: 700px;
         margin: auto;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         display: flex;
         flex-direction: row;
        justify-content: space-between;
