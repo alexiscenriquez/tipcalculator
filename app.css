@@ -102,14 +102,18 @@ padding: 20px;
     justify-content: space-between;
     margin-top: 20px;
 }
-#cost{
+.cost{
     align-self: center;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Space Mono', monospace;
     color: var(--sCyan);
     font-weight: 700;
 }
-
+.percent:hover{
+    background-color: var(--sCyan);
+    opacity: 0.6;
+    transition-property: all 0.1s;
+}
 #reset{
     margin-top: 30px;
     width: 100%;
@@ -123,6 +127,21 @@ padding: 20px;
     font-size: 20px;
     text-transform: uppercase;
 }
+#reset:hover{
+    background-color: var(--lgCyan);
+    opacity: 0.4;
+    transition-property: all 0.1s;}
+input[type="text"]{
+    border: 1pt solid var(--sCyan);
+    outline: none;
+}
+button:hover{
+    cursor: pointer;
+}
+input[type="button"]:hover{
+    cursor: pointer;
+}
+
 @media(max-width:700px){
 .wrapper{
   
@@ -189,6 +208,7 @@ margin-bottom: 10px;
     #amount,#people{
 background-size: 10px;
     }
+   
     .wrapper{
         padding:30px;
         width: 80%;
@@ -204,6 +224,7 @@ background-size: 10px;
         width: 40%;
         padding-bottom: 10px;
     }
+
     #total{
         width: 40%;
         padding:30px;
@@ -217,7 +238,10 @@ background-size: 10px;
     .percent{
         padding:5px;
     }
-
+    #percentages input[type="text"]
+{
+    max-width: 70px;
+}
     #reset{
         padding:5px;
     }
