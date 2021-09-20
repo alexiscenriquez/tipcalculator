@@ -46,7 +46,7 @@
         </div>
       </div>
       <div id="num">
-        <label for="people"> Number of People</label>
+        <label for="people"><span>Number of People</span> <span id="error">Cant Be Zero</span> </label>
         <input type="text" name="people" id="people" placeholder="0" />
       </div>
     </div>
@@ -56,14 +56,14 @@
           <p>Tip Amount</p>
           <span id="person">/ person</span>
         </div>
-        <span class="cost">$0.00</span>
+        <span class="cost" id="ta">$0.00</span>
       </div>
       <div class="calculation">
         <div class="pricing">
           <p>Total</p>
           <span id="person">/ person</span>
         </div>
-        <span class="cost">$0.00</span>
+        <span class="cost" id="tot">$0.00</span>
       </div>
 
       <button id="reset">Reset</button>
