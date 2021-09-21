@@ -13,21 +13,24 @@ let numPeople;
 let tAmountpp;
 let bill;
 let billpp;
+let customp;
 
 document.addEventListener("click", (e) => {
   if (e.target == custom) {
     custom.type = "text";
     custom.value = " ";
-  } else {
+  } 
+  else {
     custom.type = "button";
     custom.value = "Custom";
   }
+
+ 
 });
-//use key press to concatenate the values the user entered then parseInt
-amount.addEventListener("keypress", function () {
-  //  if (e.key === "Enter") {
-  bill = parseInt(amount.value) * 0.01;
-  // }
+
+amount.addEventListener("keyup", function () {
+  bill = parseInt(amount.value) ;
+
   return bill;
 });
 
@@ -43,53 +46,59 @@ for (let i = 0; i < percentages.length; i++) {
   });
 }
 
-people.addEventListener("keypress", function () {
-  // if ((e.key === "Enter")) {
+people.addEventListener("keyup", function () {
   checkPeople();
   numPeople = parseInt(people.value);
-  if (numPeople !== 0) {
-    calculateTip();
+    if(numPeople!=="0"){
+      calculateTip();
     calculateTotal();
   }
-  //}
+  
 });
 reset.addEventListener("click", () => {
   clear();
 });
-/*So we'll use keypress to track if the user entered a zero
-rather than using the enter key bc the user may not press 
-enter and expect to get a result */
+
+custom.addEventListener("keyup", () => {
+  getCustomPercentage();
+});
+
+function getCustomPercentage() {
+  perc = custom.value;
+  return perc;
+}
 function checkPeople() {
-  if (people.value == "0") {
+  if (people.value === "0") {
     people.style.border = "solid 1pt red";
     err.style.visibility = "visible";
-    ta.textContent="Error"
-    total.textContent="Error"
+    ta.textContent = "Error";
+    total.textContent = "Error";
     return false;
   } else {
     people.style.border = "none";
     err.style.visibility = "hidden";
-    return true;
+   return true;
   }
 }
 
 function calculateTip() {
-  tAmount = bill * perc;
+  tAmount = bill * (perc/100);
   if (checkPeople() == true) {
     tAmountpp = tAmount / numPeople;
     tAmountpp = Math.round(parseFloat(tAmountpp) * 100) / 100;
 
     ta.textContent = `$${tAmountpp}`;
     return tAmountpp;
-  } else console.log("false");
+  } 
+  else console.log("false");
 }
 
 function calculateTotal() {
-  billpp = bill / numPeople + tAmount;
+  billpp = (bill + tAmount)/numPeople;
   billpp = Math.round(parseFloat(billpp) * 100) / 100;
-  if(people.value==""){
-    ta.textContent="$0.00"
-    total.textContent="0.00"
+  if (people.value === "") {
+    ta.textContent = "$0.00";
+    total.textContent = "$0.00";
   }
   total.textContent = `$${billpp}`;
   return billpp;
@@ -98,7 +107,7 @@ function calculateTotal() {
 function clear() {
   amount.value = "";
   people.value = "";
-  perc=""
+  perc = "";
   ta.textContent = "$0.00";
   total.textContent = "$0.00";
 }
