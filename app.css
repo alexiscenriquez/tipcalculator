@@ -111,11 +111,11 @@ padding: 20px;
     color: var(--sCyan);
     font-weight: 700;
 }
-.percent:hover{
+#percent2{
     background-color: var(--sCyan);
     opacity: 0.6;
     transition-property: all 0.1s;
-}
+} 
 #reset{
     margin-top: 30px;
     width: 100%;
