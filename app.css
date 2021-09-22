@@ -25,6 +25,7 @@ body {
   background-color: white;
   padding-bottom: 50px;
   display: flex;
+  flex-direction: column;
 }
 #bill {
   display: flex;

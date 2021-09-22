@@ -17,7 +17,7 @@ let billpp;
 let customp;
 
 document.addEventListener("click", (e) => {
-  if (e.target == custom||custom.innerText!="") {
+  if (e.target == custom||custom.type=="text"&&custom.value.length>1) {
     custom.type = "text";
     custom.style.border = "solid 1pt var(--sCyan)"
     
