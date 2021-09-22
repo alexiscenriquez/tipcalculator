@@ -34,10 +34,10 @@ amount.addEventListener("keyup", function () {
 for (let i = 0; i < percentages.length; i++) {
   percentages[i].addEventListener("click", () => {
     perc = parseInt(percentages[i].value);
-if(people.value!==""){
-  calculateTip();
-    calculateTotal();
-}
+    if (people.value !== "") {
+      calculateTip();
+      calculateTotal();
+    }
     return perc;
   });
 }
@@ -55,9 +55,9 @@ people.addEventListener("keyup", function () {
     total.textContent = "$0.00";
   }
 });
-reset.addEventListener("click", clear) 
- 
-custom.addEventListener("keyup",getCustomPercentage);
+reset.addEventListener("click", clear);
+
+custom.addEventListener("keyup", getCustomPercentage);
 
 function getCustomPercentage() {
   perc = custom.value;
@@ -75,7 +75,7 @@ function checkPeople() {
     return true;
   }
 }
-//If we're returning false, we cant check the total amount thats why it returns Nan
+
 function calculateTip() {
   tAmount = bill * (perc / 100);
   if (checkPeople() == true) {
@@ -98,7 +98,6 @@ function calculateTotal() {
     total.textContent = `$${billpp}`;
     return billpp;
   }
-  //else total.textContent = "$0.00";
 }
 function clear() {
   amount.value = "";
@@ -108,10 +107,9 @@ function clear() {
   total.textContent = "$0.00";
 }
 function toggleClass(el) {
-let kids=document.getElementById("percentages").children;
-for(let i=0;i<kids.length;i++){
-  kids[i].className="percent"
-}
-el.className="percent2"
-
+  let kids = document.getElementById("percentages").children;
+  for (let i = 0; i < kids.length; i++) {
+    kids[i].className = "percent";
+  }
+  el.className = "percent2";
 }
