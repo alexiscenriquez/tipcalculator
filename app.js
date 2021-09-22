@@ -70,6 +70,10 @@ function checkPeople() {
     ta.textContent = "$0.00";
     total.textContent = "$0.00";
     return false;
+  }
+  else if (people.value === "") {
+    ta.textContent = "$0.00";
+    total.textContent = "$0.00";
   } else {
     people.style.border = "none";
     err.style.visibility = "hidden";
@@ -92,10 +96,7 @@ function calculateTotal() {
   if (checkPeople() == true) {
     billpp = (bill + tAmount) / numPeople;
     billpp = Math.round(parseFloat(billpp) * 100) / 100;
-    if (people.value === "") {
-      ta.textContent = "$0.00";
-      total.textContent = "$0.00";
-    }
+
     total.textContent = `$${billpp}`;
     return billpp;
   }
