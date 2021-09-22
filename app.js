@@ -17,24 +17,26 @@ let billpp;
 let customp;
 
 document.addEventListener("click", (e) => {
-  if (e.target == custom) {
+  if (e.target == custom||custom.innerText!="") {
     custom.type = "text";
+    custom.style.border = "solid 1pt var(--sCyan)"
+    
     custom.value = " ";
   }
-  if (custom.value !== null) {
-    custom.type = "text";
-  } else {
+ else {
     custom.type = "button";
     custom.value = "Custom";
+    custom.style.border = "none"
   }
 
   if (e.target == amount) {
     amount.style.border = "solid 1pt var(--sCyan)"
+    
   }
   else {
     amount.style.border = "none"
   }
-  if (e.target == people) {
+   if (e.target == people) {
     people.style.border = "solid 1pt var(--sCyan)"
   }
   else {
