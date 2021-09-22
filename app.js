@@ -19,17 +19,14 @@ document.addEventListener("click", (e) => {
   if (e.target == custom) {
     custom.type = "text";
     custom.value = " ";
-  } 
-  else {
+  } else {
     custom.type = "button";
     custom.value = "Custom";
   }
-
- 
 });
 
 amount.addEventListener("keyup", function () {
-  bill = parseInt(amount.value) ;
+  bill = parseInt(amount.value);
 
   return bill;
 });
@@ -37,11 +34,10 @@ amount.addEventListener("keyup", function () {
 for (let i = 0; i < percentages.length; i++) {
   percentages[i].addEventListener("click", () => {
     perc = parseInt(percentages[i].value);
-    if (percentages[i].click) {
-      percentages[i].id = "percent2";
-    }
-
-    if (percentages[i].id == "percent2") percentages[i].id = "percent";
+if(people.value!==""){
+  calculateTip();
+    calculateTotal();
+}
     return perc;
   });
 }
@@ -49,19 +45,19 @@ for (let i = 0; i < percentages.length; i++) {
 people.addEventListener("keyup", function () {
   checkPeople();
   numPeople = parseInt(people.value);
-    if(numPeople!=="0"){
-      calculateTip();
+  if (numPeople !== "0") {
+    calculateTip();
     calculateTotal();
   }
-  
-});
-reset.addEventListener("click", () => {
-  clear();
-});
 
-custom.addEventListener("keyup", () => {
-  getCustomPercentage();
+  if (numPeople === "0") {
+    ta.textContent = "$0.00";
+    total.textContent = "$0.00";
+  }
 });
+reset.addEventListener("click", clear) 
+ 
+custom.addEventListener("keyup",getCustomPercentage);
 
 function getCustomPercentage() {
   perc = custom.value;
@@ -71,43 +67,51 @@ function checkPeople() {
   if (people.value === "0") {
     people.style.border = "solid 1pt red";
     err.style.visibility = "visible";
-    ta.textContent = "Error";
-    total.textContent = "Error";
+
     return false;
   } else {
     people.style.border = "none";
     err.style.visibility = "hidden";
-   return true;
+    return true;
   }
 }
-
+//If we're returning false, we cant check the total amount thats why it returns Nan
 function calculateTip() {
-  tAmount = bill * (perc/100);
+  tAmount = bill * (perc / 100);
   if (checkPeople() == true) {
     tAmountpp = tAmount / numPeople;
     tAmountpp = Math.round(parseFloat(tAmountpp) * 100) / 100;
 
     ta.textContent = `$${tAmountpp}`;
     return tAmountpp;
-  } 
-  else console.log("false");
+  } else return false;
 }
 
 function calculateTotal() {
-  billpp = (bill + tAmount)/numPeople;
-  billpp = Math.round(parseFloat(billpp) * 100) / 100;
-  if (people.value === "") {
-    ta.textContent = "$0.00";
-    total.textContent = "$0.00";
+  if (checkPeople() == true) {
+    billpp = (bill + tAmount) / numPeople;
+    billpp = Math.round(parseFloat(billpp) * 100) / 100;
+    if (people.value === "") {
+      ta.textContent = "$0.00";
+      total.textContent = "$0.00";
+    }
+    total.textContent = `$${billpp}`;
+    return billpp;
   }
-  total.textContent = `$${billpp}`;
-  return billpp;
+  //else total.textContent = "$0.00";
 }
-
 function clear() {
   amount.value = "";
   people.value = "";
   perc = "";
   ta.textContent = "$0.00";
   total.textContent = "$0.00";
+}
+function toggleClass(el) {
+let kids=document.getElementById("percentages").children;
+for(let i=0;i<kids.length;i++){
+  kids[i].className="percent"
+}
+el.className="percent2"
+
 }

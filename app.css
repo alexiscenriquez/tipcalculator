@@ -1,76 +1,75 @@
-:root{
---sCyan:hsl(172, 67%, 45%);
---dgCyan:hsl(186, 14%, 43%);
---dgCyan2:hsl(184, 14%, 56%);
---lgCyan:hsl(185, 41%, 84%);
---lgCyan2:hsl(189, 41%, 97%);
---vdCyan:hsl(183, 100%, 15%);
-
+:root {
+  --sCyan: hsl(172, 67%, 45%);
+  --dgCyan: hsl(186, 14%, 43%);
+  --dgCyan2: hsl(184, 14%, 56%);
+  --lgCyan: hsl(185, 41%, 84%);
+  --lgCyan2: hsl(189, 41%, 97%);
+  --vdCyan: hsl(183, 100%, 15%);
 }
 
-body{
-   box-sizing: border-box;
-    background-color: var(--lgCyan);
-    width: 100%;
-    font-family: 'Space Mono', monospace;
-    margin: 0;
-}
-
-#logo{
-    background-image: url("images/logo.svg");
-    background-repeat: no-repeat;
- 
-    height: 80px;
-}
-.wrapper{
-    background-color: white;
-
-  
-}
-#bill{
-    display: flex;
-    flex-direction: column;
-}
-.percent{
-    border:none;
-    border-radius: 5px;
-    background-color: var(--vdCyan);
-    color: white;
-    font-weight: 600;
-    font-size: 15px;
-    font-family: 'Space Mono', monospace;
-}
-
-.percent:last-child{
-    background-color: var(--lgCyan2);
-    color:var(--dgCyan)
-}
-
- label,p:first-child{
-    margin-bottom: 10px;
-    color: var(--dgCyan);
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-}
-
-#amount{
-    background-image: url("images/icon-dollar.svg");
-}
-#people{
-    background-image: url("images/icon-person.svg");
- 
-}
-.pricing p{
-    color: white;
+body {
+  box-sizing: border-box;
+  background-color: var(--lgCyan);
+  width: 100%;
+  font-family: "Space Mono", monospace;
   margin: 0;
 }
-#person{
-    color:var(--dgCyan2);
-    font-weight: 600;
+
+#logo {
+  background-image: url("images/logo.svg");
+  background-repeat: no-repeat;
+
+  height: 80px;
 }
-#people, #amount{
-    color: var(--dgCyan2);
+.wrapper {
+  background-color: white;
+  padding-bottom: 50px;
+}
+#bill {
+  display: flex;
+  flex-direction: column;
+}
+.percent {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--vdCyan);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Space Mono", monospace;
+}
+
+.percent:last-child {
+  background-color: var(--lgCyan2);
+  color: var(--dgCyan);
+}
+
+label,
+p:first-child {
+  margin-bottom: 10px;
+  color: var(--dgCyan);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+#amount {
+  background-image: url("images/icon-dollar.svg");
+}
+#people {
+  background-image: url("images/icon-person.svg");
+}
+.pricing p {
+  color: white;
+  margin: 0;
+}
+#person {
+  color: var(--dgCyan2);
+  font-weight: 600;
+}
+#people,
+#amount {
+  color: var(--dgCyan2);
   text-align: right;
   font-size: 20px;
   font-weight: 700;
@@ -80,174 +79,185 @@ body{
   border: none;
   border-radius: 5px;
   padding-right: 10px;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
 }
-#people::placeholder,#amount::placeholder{
-    color: var(--dgCyan2);
+#people::placeholder,
+#amount::placeholder {
+  color: var(--dgCyan2);
 }
-#num
-{
-    display: flex;
-    flex-direction: column;
-}
-
-#total{
-background-color: var(--vdCyan);
-border-radius: 10px;
-padding: 20px;
-
+#num {
+  display: flex;
+  flex-direction: column;
 }
 
-.calculation
-{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+#total {
+  background-color: var(--vdCyan);
+  border-radius: 10px;
+  padding: 20px;
 }
-.cost{
-    align-self: center;
-    font-size: 30px;
-    font-family: 'Space Mono', monospace;
-    color: var(--sCyan);
-    font-weight: 700;
-}
-#percent2{
-    background-color: var(--sCyan);
-    opacity: 0.6;
-    transition-property: all 0.1s;
-} 
-#reset{
-    margin-top: 30px;
-    width: 100%;
-    
-    border-radius: 5px;
-    border:none;
-    background-color: var(--sCyan);
-    font-weight: 700;
-    font-family: 'Space Mono', monospace;
-    color:var(--vdCyan);
-    font-size: 20px;
-    text-transform: uppercase;
-}
-#reset:hover{
-    background-color: var(--lgCyan);
-    opacity: 0.4;
-    transition-property: all 0.1s;}
-input[type="text"]{
-    border: 1pt solid var(--sCyan);
-    outline: none;
-}
-button:hover{
-    cursor: pointer;
-}
-input[type="button"]:hover{
-    cursor: pointer;
-}
-#error{
-    color:red;
-    visibility: hidden;
-}
-@media(max-width:700px){
-.wrapper{
-  
-    padding:30px;
 
-  
- border-radius: 20px 20px 0 0;
+.calculation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-#input{
+.cost {
+  align-self: center;
+  font-size: 30px;
+  font-family: "Space Mono", monospace;
+  color: var(--sCyan);
+  font-weight: 700;
+}
+.percent2 {
+  background-color:hsla(172, 67%, 45%, 0.521);
+  border: none;
+  border-radius: 5px;
+  color: var(--vdCyan);
+
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Space Mono", monospace;
+}
+.percent2:last-child{
+  background-color: transparent;
+}
+#reset {
+  margin-top: 30px;
+  width: 100%;
+
+  border-radius: 5px;
+  border: none;
+  background-color: var(--sCyan);
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  color: var(--vdCyan);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+#reset:hover {
+  background-color: var(--lgCyan);
+  opacity: 0.4;
+  transition-property: all 0.1s;
+}
+input[type="text"] {
+  border: 1pt solid var(--sCyan);
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
+}
+input[type="button"]:hover {
+  cursor: pointer;
+}
+#error {
+  color: red;
+  visibility: hidden;
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    padding: 30px;
+
+    border-radius: 20px 20px 0 0;
+  }
+  #input {
     margin: auto;
-max-width: 350px;
-margin-bottom: 10px;
+    max-width: 350px;
+    margin-bottom: 10px;
+  }
+label{
+    font-size: 12px;
 }
-
-#percentages{
+  #percentages {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 35px 35px 35px;
     gap: 10px;
-   justify-content: center;
-   margin-bottom: 30px;
-}
-.percent:nth-child(3){
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .percent:nth-child(3) {
     background-color: var(--sCyan);
-    color:var(--vdCyan)
-}
+    color: var(--vdCyan);
+  }
 
-
-#amount{
- height:35px;
-
-}
-#people{
- 
-   max-width: 100%;
-   height: 35px;
-}
-#logo{
- 
-    margin:30px;
+  #amount {
+    height: 35px;
+  }
+  #people {
+    max-width: 100%;
+    height: 35px;
+  }
+  #logo {
+    margin: 30px;
     margin-bottom: 20px;
     background-position: center;
-}
-#num{
+  }
+  #num {
     margin-bottom: 30px;
-}
-#total{
-    margin:auto;
+  }
+  #total {
+    margin: auto;
     margin-bottom: 30px;
     max-width: 350px;
+  }
+
+  #reset {
+    padding: 10px;
+  }
+
+  #percentages input[type="text"] {
+    max-width: 120px;
+  }
+  .attribution{
+    background-color: white;
+  }
 }
+@media (min-width: 701px) {
+  #logo {
+    margin: 40px;
 
-#reset{
-    padding:10px;
-}
-}
-@media(min-width:701px){
+    background-position: center;
+  }
+  #amount,
+  #people {
+    background-size: 10px;
+  }
 
-    #logo{
-        margin: 40px;
+  .wrapper {
+    padding: 30px;
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+  }
+  #input {
+    width: 45%;
+    padding-bottom: 10px;
+  }
 
-        background-position: center;
-    }
-    #amount,#people{
-background-size: 10px;
-    }
-   
-    .wrapper{
-        padding:30px;
-        width: 80%;
-        max-width: 700px;
-        margin: auto;
-        margin-bottom: 50px;
-        display: flex;
-        flex-direction: row;
-       justify-content: space-between;
-       border-radius: 20px;
-    }
-    #input{
-        width: 45%;
-        padding-bottom: 10px;
-    }
-
-    #total{
-        width: 40%;
-        padding:30px;
-    }
-    #percentages{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap:10px;
-        margin-bottom:25px;
-    }
-    .percent{
-        padding:5px;
-    }
-    #percentages input[type="text"]
-{
+  #total {
+    width: 40%;
+    padding: 30px;
+  }
+  #percentages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .percent {
+    padding: 5px;
+  }
+  #percentages input[type="text"] {
     max-width: 70px;
-}
-    #reset{
-        padding:5px;
-    }
+  }
+  #reset {
+    padding: 5px;
+  }
+  
 }
