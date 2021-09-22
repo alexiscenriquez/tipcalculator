@@ -67,7 +67,8 @@ function checkPeople() {
   if (people.value === "0") {
     people.style.border = "solid 1pt red";
     err.style.visibility = "visible";
-
+    ta.textContent = "$0.00";
+    total.textContent = "$0.00";
     return false;
   } else {
     people.style.border = "none";
