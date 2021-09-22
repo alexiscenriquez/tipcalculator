@@ -24,8 +24,7 @@ body {
 .wrapper {
   background-color: white;
   padding-bottom: 50px;
-display: flex;
-
+  display: flex;
 }
 #bill {
   display: flex;
@@ -111,7 +110,7 @@ p:first-child {
   font-weight: 700;
 }
 .percent2 {
-  background-color:hsla(172, 67%, 45%, 0.521);
+  background-color: hsla(172, 67%, 45%, 0.521);
   border: none;
   border-radius: 5px;
   color: var(--vdCyan);
@@ -120,7 +119,7 @@ p:first-child {
   font-size: 15px;
   font-family: "Space Mono", monospace;
 }
-.percent2:last-child{
+.percent2:last-child {
   background-color: transparent;
 }
 #reset {
@@ -143,6 +142,7 @@ p:first-child {
 }
 input[type="text"] {
   border: 1pt solid var(--sCyan);
+
   outline: none;
 }
 button:hover {
@@ -151,6 +151,7 @@ button:hover {
 input[type="button"]:hover {
   cursor: pointer;
 }
+
 #error {
   color: red;
   visibility: hidden;
@@ -167,9 +168,9 @@ input[type="button"]:hover {
     max-width: 350px;
     margin-bottom: 10px;
   }
-label{
+  label {
     font-size: 12px;
-}
+  }
   #percentages {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -211,7 +212,7 @@ label{
   #percentages input[type="text"] {
     max-width: 120px;
   }
-  .attribution{
+  .attribution {
     background-color: white;
   }
 }
@@ -236,7 +237,6 @@ label{
     flex-direction: row;
     justify-content: space-between;
     border-radius: 20px;
-  
   }
   #input {
     width: 45%;
@@ -262,5 +262,4 @@ label{
   #reset {
     padding: 5px;
   }
-  
 }

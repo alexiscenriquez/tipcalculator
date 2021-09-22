@@ -20,10 +20,27 @@ document.addEventListener("click", (e) => {
   if (e.target == custom) {
     custom.type = "text";
     custom.value = " ";
+  }
+  if (custom.value !== null) {
+    custom.type = "text";
   } else {
     custom.type = "button";
     custom.value = "Custom";
   }
+
+  if (e.target == amount) {
+    amount.style.border = "solid 1pt var(--sCyan)"
+  }
+  else {
+    amount.style.border = "none"
+  }
+  if (e.target == people) {
+    people.style.border = "solid 1pt var(--sCyan)"
+  }
+  else {
+    people.style.border = "none"
+  }
+
 });
 
 amount.addEventListener("keyup", function () {
@@ -64,6 +81,9 @@ custom.addEventListener("keyup", getCustomPercentage);
 
 function getCustomPercentage() {
   perc = custom.value;
+  if (perc.includes("%")) {
+    perc = perc.slice(0, -1)
+  }
   return perc;
 }
 function checkPeople() {
