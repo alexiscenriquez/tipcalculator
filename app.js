@@ -7,6 +7,7 @@ let err = document.querySelector("#error");
 let ta = document.querySelector("#ta");
 let total = document.querySelector("#tot");
 let reset = document.querySelector("#reset");
+let kids = document.getElementById("percentages").children;
 let tAmount;
 let perc;
 let numPeople;
@@ -38,6 +39,8 @@ for (let i = 0; i < percentages.length; i++) {
       calculateTip();
       calculateTotal();
     }
+
+
     return perc;
   });
 }
@@ -83,6 +86,12 @@ function checkPeople() {
 
 function calculateTip() {
   tAmount = bill * (perc / 100);
+
+  if (perc == "") {
+    ta.textContent = "$0.00";
+    total.textContent = "$0.00";
+    return false
+  }
   if (checkPeople() == true) {
     tAmountpp = tAmount / numPeople;
     tAmountpp = Math.round(parseFloat(tAmountpp) * 100) / 100;
@@ -107,9 +116,13 @@ function clear() {
   perc = "";
   ta.textContent = "$0.00";
   total.textContent = "$0.00";
+
+  for (let i = 0; i < kids.length; i++) {
+    kids[i].className = "percent";
+  }
 }
 function toggleClass(el) {
-  let kids = document.getElementById("percentages").children;
+
   for (let i = 0; i < kids.length; i++) {
     kids[i].className = "percent";
   }
